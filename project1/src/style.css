@@ -133,6 +133,32 @@ header {
   font-size: 1.6rem;
 }
 
+#leftArrow, #rightArrow {
+  position: absolute;
+  top: 35%;
+  background-color: #222;
+  color: white;
+  border-radius: 100%;
+  width: 4.0rem;
+  height: 4.0rem;
+  font-size: 2.7rem;
+  font-weight: bold;
+  padding: 8px 6px;
+  z-index: 1;
+}
+#leftArrow:hover, #rightArrow:hover {
+  cursor: pointer;
+  background-color: #333;
+  
+}
+#leftArrow {
+  left: 15px;
+}
+
+#rightArrow {
+  right: 15px;
+}
+
 
 section {
   border: 1px solid green;
@@ -166,6 +192,9 @@ section {
   }
   .banner img {
     width: 195%;
+  }
+  #rightArrow, #leftArrow {
+    display: none;
   }
   header {
     padding: 0;
