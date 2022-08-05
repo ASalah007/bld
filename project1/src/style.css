@@ -102,13 +102,44 @@ nav>div {
 
 header {
   border: 1px solid blue;
+  padding: 0 5px;
 }
+
+.banner{
+  width: 100%;
+}
+
+.banner img{
+  width: 100%;
+  z-index: -1;
+}
+
+.banner div {
+  width: 460px;
+  background-color: white;
+  position: absolute;
+  top: 20vh;
+  left: 5vw;
+  padding: 2rem; 
+  box-shadow: 0 5px 5px #AAA;
+  font-size: 1.6rem;
+  color: #222;
+}
+.banner>div>h1 {
+  font-family: Georgia,Times,times new roman,serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+  padding-bottom: 1.1rem;
+}
+.banner>div>p {
+  font-size: 1.6rem;
+}
+
 
 section {
   border: 1px solid green;
 }
 
 @media screen and (max-width: 750px){
+  /* ========================nav================================================================== */
   nav>*, nav div, nav a{
     display: none;
   }
@@ -121,9 +152,25 @@ section {
     position: absolute;
     font-size: 4rem;
   }
-  header {
-    background-color: red;
+
+  /*====================================header ===========================================*/
+
+  .banner>div {
+    position: static;
+    width: 100%;
+    box-shadow: 0 0 0;
   }
+  .banner>a{
+    direction: rtl;
+    display: block;
+  }
+  .banner img {
+    width: 195%;
+  }
+  header {
+    padding: 0;
+  }
+
 }
 
 
