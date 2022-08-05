@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.6rem
+}
+
+/* ========================================navigation bar style ============================================= */
+nav>*{
+  display: inline-block;
+  flex-grow: 1;
+  text-align: center;
+}
+
+nav {
+  height: 72px;
+  display: flex;
+  padding: 15px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 10px 10px 10px #EDEDED;
+}
+
+#menu { display: none; }
+
+#searchBar {
+  text-align: center;
+  flex-grow: 10;
+  outline: none;
+}
+#searchBar>input {
+  width: 100%;
+  height: 50px;
+  border-radius: 50px;
+  padding-left: 25px;
+  border: 1px solid black;
+  font-size: 1.5rem;
+  background-color: #eefeee;
+}
+
+#searchBar>input:focus {
+  outline: none;
+}
+#logo {
+  flex-grow: 2;
+  min-width: 90px;
+  max-width: 90px;
+}
+#cart:hover {
+  color: #5624d0;
+  font-weight: bold;
+}
+
+#logIn, #signUp, #lang{
+  font-weight: bold;
+  font-size: 1.7rem;
+  border: 1px solid black;
+  padding: 1rem 0.5rem;
+  margin: 5px;
+}
+
+#logIn, #signUp {
+  min-width: 80px;
+}
+
+#logIn:hover, #lang:hover{
+  background-color: #EEE;
+}
+
+#signUp {
+  background-color: black;
+  color: white;
+}
+#signUp:hover {
+  background-color: #333;
+}
+
+#lang {
+  font-weight: normal;
+  font-size: 2rem;
+  max-width: 40px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  font-size: 1.3rem;
+  padding: 0 5px;
+}
+nav>div {
+  display: flex;
+}
+/*=========================================================================================================== */
+
+header {
+  border: 1px solid blue;
+}
+
+section {
+  border: 1px solid green;
+}
+
+@media screen and (max-width: 750px){
+  nav>*, nav div, nav a{
+    display: none;
+  }
+  #logo {
+    display: inline-block;
+    margin: auto;
+  }
+  #menu {
+    display: inline-block;
+    position: absolute;
+    font-size: 4rem;
+  }
+  header {
+    background-color: red;
+  }
+}
+
+
+
+
