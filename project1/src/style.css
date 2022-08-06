@@ -58,12 +58,13 @@ nav {
   font-weight: bold;
 }
 
-#logIn, #signUp, #lang{
+.btn{
   font-weight: bold;
   font-size: 1.7rem;
   border: 1px solid black;
   padding: 1rem 0.5rem;
   margin: 5px;
+  text-decoration: none;
 }
 
 #logIn, #signUp {
@@ -101,7 +102,6 @@ nav>div {
 /*=========================================================================================================== */
 
 header {
-  border: 1px solid blue;
   padding: 0 5px;
 }
 
@@ -160,10 +160,122 @@ header {
   right: 15px;
 }
 
+/*===============================Courses =================================*/
 
-section {
-  border: 1px solid green;
+
+.courses {
+  padding: 3.2rem;
 }
+
+.courses > h1 {
+  font-family: Georgia,Times,times new roman,serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+  font-size: 3.3rem;
+  color: #222;
+}
+
+.courses h1+p{
+  font-size: 2rem;
+  padding: 2rem 0;
+  color: #222;
+}
+
+.courses>ul {
+  list-style-type: none;
+  display: block;
+}
+.courses>ul li>a {
+  float: left;
+  padding: 0 1.2rem 1.4rem 0;
+  margin: 0 .5rem;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #555;
+  text-decoration: none;
+}
+
+/*stop elements from floating after the list*/
+.courses>ul:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.courses>div {
+  border: 1px solid #AAA;
+  border-radius: 2px;
+  padding: 3rem;
+}
+
+.courses>div>p {
+  padding: 1rem 0;
+  color: #333;
+  width: 70%; 
+}
+
+.explore {
+  color: black;
+  display: inline-block;
+  padding: 1rem;
+  margin: 1rem 0 4rem;
+  font-size: 1.5rem;
+}
+
+.explore:hover {
+  background-color: #EEE;
+}
+
+.cards {
+  list-style-type: none;
+  display: flex;
+  align-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cards>li {
+  display: block;
+}
+
+
+.card > a {
+  display:block;
+  color: black;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 10px;
+}
+.imgWrapper {
+  width: 250px;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+.imgWrapper>img {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #999;
+}
+
+.author {
+  padding: .8rem 0 0;
+  color: #444;
+}
+.rating>span {
+  color: #b4690e;
+  font-size: 1.6rem;
+  margin: .8rem 0;
+  font-weight: bold;
+  line-height: 1rem;
+}
+.rating {
+  word-spacing: -10px;
+}
+.price {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+
+
 
 @media screen and (max-width: 750px){
   /* ========================nav================================================================== */
@@ -179,7 +291,9 @@ section {
     position: absolute;
     font-size: 4rem;
   }
-
+  #menu:hover {
+    cursor: pointer;
+  }
   /*====================================header ===========================================*/
 
   .banner>div {
@@ -200,6 +314,19 @@ section {
   header {
     padding: 0;
   }
+
+  /*=====================================courses==================*/
+
+  .courses {
+    padding: 2rem;
+  }
+
+  .courses>div {
+    padding: 1.5rem;
+
+  }
+
+
 
 }
 
