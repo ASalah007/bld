@@ -129,9 +129,10 @@ header {
   font-family: Georgia,Times,times new roman,serif,apple color emoji,segoe ui emoji,segoe ui symbol;
   padding-bottom: 1.1rem;
 }
-.banner>div>p {
-  font-size: 1.6rem;
-}
+
+/* .banner>div>p { */
+/*   font-size: 1.6rem; */
+/* } */
 
 #leftArrow, #rightArrow {
   position: absolute;
