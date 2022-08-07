@@ -13,7 +13,7 @@ body {
 }
 
 /* ========================================navigation bar style ============================================= */
-nav>*{
+nav>* {
   display: inline-block;
   flex-grow: 1;
   text-align: center;
@@ -31,19 +31,40 @@ nav {
 #menu { display: none; }
 
 #searchBar {
+  width: 100%;
+  height: 50px;
+  border-radius: 50px;
+  border: 1px solid black;
+  font-size: 1.5rem;
+  background-color: #eefeee;
+  display: flex;
+  justify-content: center;
   text-align: center;
   flex-grow: 10;
   outline: none;
 }
 #searchBar>input {
-  width: 100%;
-  height: 50px;
-  border-radius: 50px;
-  padding-left: 25px;
-  border: 1px solid black;
-  font-size: 1.5rem;
-  background-color: #eefeee;
+  float: right;
+  height: 100%;
+  width: 80%;
+  background-color: transparent;
+  border:0;
 }
+#searchBar>button{
+  float: left;
+  width: 20%;
+  background-color: transparent;
+  border: 0;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+  padding-left: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
 
 #searchBar>input:focus {
   outline: none;
@@ -63,9 +84,17 @@ nav {
   font-size: 1.7rem;
   border: 1px solid black;
   padding: 1rem 0.5rem;
-  margin: 5px;
+  margin: 0 5px;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.leftBtns{
+  display: flex;
+  align-items: stretch;
+} 
 
 #logIn, #signUp {
   min-width: 80px;
@@ -96,9 +125,8 @@ nav a {
   font-size: 1.3rem;
   padding: 0 5px;
 }
-nav>div {
-  display: flex;
-}
+
+
 /*=========================================================================================================== */
 
 header {
@@ -275,16 +303,27 @@ header {
 }
 
 
+@media screen and (max-width: 900px){
+  .hideOnSmallScreen{
+    display: none;
+  }
 
+  .banner>div {
+    width: 300px;
+    font-size: 1.3rem;
+    top: 12%;
+  }
+}
 
 @media screen and (max-width: 750px){
   /* ========================nav================================================================== */
-  nav>*, nav div, nav a{
+  nav>*, nav div, nav a, .leftBtns{
     display: none;
   }
   #logo {
     display: inline-block;
-    margin: auto;
+    position: absolute;
+    left: 49%;
   }
   #menu {
     display: inline-block;
@@ -294,8 +333,8 @@ header {
   #menu:hover {
     cursor: pointer;
   }
-  /*====================================header ===========================================*/
 
+  /*====================================header ===========================================*/
   .banner>div {
     position: static;
     width: 100%;
@@ -315,6 +354,7 @@ header {
     padding: 0;
   }
 
+
   /*=====================================courses==================*/
 
   .courses {
@@ -323,11 +363,7 @@ header {
 
   .courses>div {
     padding: 1.5rem;
-
   }
-
-
-
 }
 
 
