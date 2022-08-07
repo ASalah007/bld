@@ -16,18 +16,21 @@
       <span class="material-symbols-outlined" id="menu"> menu </span>  
       <a id="logo"><img src="../resources/logo-udemy.svg" alt="udemy-logo"></a>
       <a id="categories">Categories</a>
-      <form id="searchBar" action="#">
+      <form action="#">
         <!-- <label for="searchKey">search</label> -->
-        <input type="text" id="searchKey" name="searchKey" placeholder="Search for anything">
+        <div id="searchBar">
+          <button><span class="material-symbols-outlined">search</span></button>
+          <input type="text" id="searchKey" name="searchKey" placeholder="Search for anything">
+        </div>
       </form>
-      <a href="#">Udemy Business</a>
-      <a href="#">Teach on Udemy</a>
+      <a href="#" class="hideOnSmallScreen">Udemy Business</a>
+      <a href="#" class="hideOnSmallScreen">Teach on Udemy</a>
       <span><a href="#" class="material-symbols-rounded" id="cart"> shopping_cart </a></span>
 
-      <div>
+      <div class="leftBtns">
         <a href="#" class="btn" id="logIn">Log in</a>
         <a href="#" class="btn" id="signUp">Sign Up</a>
-        <a href="#" id="lang" class="material-symbols-outlined btn"> language </a>
+        <a href="#" id="lang" class="btn"><span class="material-symbols-outlined">language</span></a>
       </div>
 
     </nav>
