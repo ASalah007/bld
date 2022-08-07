@@ -1,6 +1,6 @@
 # Udemy Clone
 
-This project is part of the udemy home page done using HTML/CSS
+Part of Udemy.com home page using HTML/CSS
 
 # On PCs
 
