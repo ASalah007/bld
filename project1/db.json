@@ -1,0 +1,88 @@
+{
+  "courses": [
+    {
+      "course-name": "python for beginners",
+      "author": "Ahmed Salah",
+      "stars-count": "4.5",
+      "price": "699.99",
+      "subnail": "https://img-b.udemycdn.com/course/240x135/394676_ce3d_5.jpg"
+    },
+    {
+      "course-name": "Learning Python for Data Analysis and Visualization",
+      "author": "Ahmed Salah",
+      "stars-count": "4.5",
+      "price": "555.55",
+      "subnail": "https://img-b.udemycdn.com/course/240x135/396876_cc92_7.jpg"
+    },
+    {
+      "course-name": "python for beginners - Learn Programming from scratch",
+      "author": "Ahmed Salah",
+      "stars-count": "4.5",
+      "price": "699.99",
+      "subnail": "https://img-b.udemycdn.com/course/240x135/405878_e5a0_3.jpg"
+    },
+    {
+      "course-name": "Python for beginners",
+      "author": "Ahmed Salah",
+      "stars-count": "4.5",
+      "price": "699.99",
+      "subnail": "https://img-b.udemycdn.com/course/240x135/426570_1b91_3.jpg"
+    },
+    {
+      "course-name": "Python beyond the basics",
+      "author": "Ahmed Salah",
+      "stars-count": "4.5",
+      "price": "699.99",
+      "subnail": "https://img-b.udemycdn.com/course/240x135/394676_ce3d_5.jpg"
+    },
+    {
+      "course-name": "python for beginners",
+      "author": "Ahmed Salah",
+      "stars-count": "4.5",
+      "price": "699.99",
+      "subnail": "https://img-b.udemycdn.com/course/240x135/394676_ce3d_5.jpg"
+    },
+    {
+      "course-name": "python for beginners",
+      "author": "Ahmed Salah",
+      "stars-count": "4",
+      "price": "419.95",
+      "subnail": "https://img-b.udemycdn.com/course/240x135/394676_ce3d_5.jpg"
+    },
+    {
+      "course-name": "python for beginners",
+      "author": "Ahmed Salah",
+      "stars-count": "4.5",
+      "price": "1999.99",
+      "subnail": "https://img-b.udemycdn.com/course/240x135/394676_ce3d_5.jpg"
+    },
+    {
+      "course-name": "python for beginners",
+      "author": "john wilson",
+      "stars-count": "3.5",
+      "price": "222.65",
+      "subnail": "https://img-b.udemycdn.com/course/240x135/394676_ce3d_5.jpg"
+    },
+    {
+      "course-name": "python for beginners",
+      "author": "Ibrahim Ismaiel",
+      "stars-count": "4.5",
+      "price": "699.99",
+      "subnail": "https://img-b.udemycdn.com/course/240x135/394676_ce3d_5.jpg"
+    },
+    {
+      "course-name": "python for beginners",
+      "author": "Ahmed Salah",
+      "stars-count": "4.5",
+      "price": "699.99",
+      "subnail": "https://img-b.udemycdn.com/course/240x135/394676_ce3d_5.jpg"
+    },
+    {
+      "course-name": "python for beginners",
+      "author": "Ahmed Salah",
+      "stars-count": "4.5",
+      "price": "699.99",
+      "subnail": "https://img-b.udemycdn.com/course/240x135/394676_ce3d_5.jpg"
+    }
+  ]
+}
