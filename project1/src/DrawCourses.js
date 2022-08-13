@@ -13,11 +13,11 @@ async function drawCourses(courses) {
   courses
     .map((e) =>
       drawCourse(
-        e["course-name"],
-        e["author"],
-        e["stars-count"],
+        e["title"],
+        e["instructors"][0]["name"],
+        e["rating"],
         e["price"],
-        e["subnail"]
+        e["image"]
       )
     )
     .forEach((e) => cards.appendChild(e));
@@ -63,7 +63,7 @@ function drawCourse(courseName, authorName, ratingValue, priceValue, imgLink) {
 
   const starCount = parseFloat(ratingValue);
   const s1 = document.createElement("span");
-  s1.innerText = ratingValue;
+  s1.innerText = ratingValue.toPrecision(2);
   rating.appendChild(s1);
   rating.classList.add("rating");
 
@@ -80,7 +80,7 @@ function drawCourse(courseName, authorName, ratingValue, priceValue, imgLink) {
     rating.appendChild(halfStar);
   }
 
-  price.innerText = "E£" + priceValue;
+  price.innerText = "$" + priceValue;
   price.classList.add("price");
 
   return card;
