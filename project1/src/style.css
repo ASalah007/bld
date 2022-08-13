@@ -246,6 +246,10 @@ header {
   padding: 3rem;
 }
 
+.courses > div h1 {
+  max-width: 250px;
+}
+
 .courses > div > p {
   padding: 1rem 0;
   color: #333;
@@ -294,6 +298,10 @@ header {
   border: 1px solid #999;
 }
 
+.card caption {
+  display: block;
+  text-align: left;
+}
 .author {
   padding: 0.8rem 0 0;
   color: #444;
@@ -367,7 +375,6 @@ header {
   header {
     padding: 0;
   }
-
 
   /*=====================================courses==================*/
 
