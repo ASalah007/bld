@@ -313,8 +313,11 @@ header {
   font-weight: bold;
   line-height: 1rem;
 }
-.rating {
-  word-spacing: -10px;
+
+.star,
+.half-star {
+  width: 1.9rem;
+  height: 1.9rem;
 }
 .price {
   font-weight: bold;

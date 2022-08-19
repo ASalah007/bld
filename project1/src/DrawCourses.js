@@ -63,21 +63,21 @@ function drawCourse(courseName, authorName, ratingValue, priceValue, imgLink) {
 
   const starCount = parseFloat(ratingValue);
   const s1 = document.createElement("span");
+  s1.classList.add("rating-num")
   s1.innerText = ratingValue.toPrecision(2);
-  rating.appendChild(s1);
-  rating.classList.add("rating");
+  cardRating.appendChild(s1);
 
-  for (var i = 0; i < starCount; i++) {
-    const star = document.createElement("span");
-    star.className = "material-symbols-outlined";
-    star.innerHTML = "star";
-    rating.appendChild(star);
+  for (var i = 0; i < Math.floor(starCount); i++) {
+    const star = document.createElement("img");
+    star.classList.add("star");
+    star.src= "../resources/star.png";
+    cardRating.appendChild(star);
   }
   if (starCount - i > 0) {
-    const halfStar = document.createElement("span");
-    halfStar.classList.add("material-symbols-outlined");
-    halfStar.innerHTML = "star_half";
-    rating.appendChild(halfStar);
+    const halfStar = document.createElement("img");
+    halfStar.classList.add("half-star");
+    halfStar.src= "../resources/half-star.png";
+    cardRating.appendChild(halfStar);
   }
 
   price.innerText = "$" + priceValue;
