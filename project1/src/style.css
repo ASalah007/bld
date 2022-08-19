@@ -321,7 +321,28 @@ header {
 }
 .price {
   font-weight: bold;
+}
+
+
+/*==========================================================Categories=================================================*/
+.categories {
+  padding: 3rem;
+}
+.categories figure div {
+  overflow: hidden;
+}
+.categories img {
+  width: 100%;
+  transition: transform 0.2s;
+}
+.categories img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.categories figcaption {
   font-size: 2rem;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 900px) {
