@@ -85,3 +85,18 @@ function drawCourse(courseName, authorName, ratingValue, priceValue, imgLink) {
 
   return card;
 }
+
+// courses navigation list
+let coursesLinks = document.querySelectorAll(".courses-list>li>a");
+coursesLinks.forEach((l) => {
+  l.addEventListener("click", function () {
+    switchCourses(this);
+  });
+});
+
+const switchCourses = (link) => {
+  document.querySelector("#active").id = "";
+  link.id = "active";
+  document.querySelector(".cards").remove();
+  getData().then((courses) => drawCourses(courses[link.dataset["type"]]));
+};
