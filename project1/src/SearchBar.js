@@ -5,7 +5,10 @@ function onSubmit(e) {
   e.preventDefault();
   const searchKey = document.getElementById("searchKey").value;
   document.querySelector(".cards").remove();
-  getData().then((courses) => drawCourses(filter(courses, searchKey)));
+  getData().then((courses) => {
+    const tp = document.getElementById("active").dataset["type"];
+    drawCourses(filter(courses[tp], searchKey));
+  });
 }
 
 const filter = (courses, searchKey) => {
