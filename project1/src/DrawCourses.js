@@ -1,4 +1,4 @@
-getData().then((courses) => drawCourses(courses));
+getData().then((courses) => drawCourses(courses["python"]));
 
 async function getData() {
   const courses = await fetch("http://localhost:3000/courses");
@@ -6,82 +6,112 @@ async function getData() {
 }
 
 // draw the given list of courses in the dom
-async function drawCourses(courses) {
-  const cards = document.createElement("ul");
+function drawCourses(courses) {
+  const cards = document.createElement("div");
   cards.classList.add("cards");
+  cards.classList.add("carousel-inner");
 
-  courses
-    .map((e) =>
-      drawCourse(
-        e["title"],
-        e["instructors"][0]["name"],
-        e["rating"],
-        e["price"],
-        e["image"]
-      )
+  const items = courses.map((e) =>
+    drawCourse(
+      e["title"],
+      e["instructors"][0]["name"],
+      e["rating"],
+      e["price"],
+      e["image"]
     )
-    .forEach((e) => cards.appendChild(e));
+  );
+  
+  const courseWidth = 220;
+  const containerWidth = document.getElementsByClassName("carousel")[0].clientWidth;
+  const coursesCount = containerWidth / courseWidth;
 
-  document.querySelector(".courses>div").appendChild(cards);
+
+  for (let i = 0; i < items.length; i++) {
+    const dv = document.createElement("div");
+    dv.style.display = "flex";
+    const dv2 = document.createElement("div");
+    dv2.classList.add("carousel-item");
+    dv2.appendChild(dv);
+
+    if (i == 0) {
+      dv2.classList.add("active");
+    }
+    for (let j = 0; j < coursesCount && i < items.length; j++, i++) {
+      dv.appendChild(items[i]);
+    }
+    cards.appendChild(dv2);
+  }
+
+  document.querySelector(".courses>div>div").appendChild(cards);
 }
 
 // prettier-ignore
-// => returns <li class=card> ... </li>
 function drawCourse(courseName, authorName, ratingValue, priceValue, imgLink) {
-  const card       = document.createElement("li");
-  const cardLink   = document.createElement("a");
-  const imgWrapper = document.createElement("div");
-  const img        = document.createElement("img");
-  const caption    = document.createElement("caption");
-  const h1         = document.createElement("h1");
-  const author     = document.createElement("div");
-  const rating     = document.createElement("div");
-  const price      = document.createElement("div");
+  const card       = document.createElement("div");
+  const cardBody   = document.createElement("div");
+  const cardTitle  = document.createElement("h1");
+  const cardImage  = document.createElement("img");
+  const cardText   = document.createElement("p");
+  const cardRating = document.createElement("div");
+  const cardPrice  = document.createElement("div");
 
-  card.classList.add("card");
-  card.appendChild(cardLink);
+  card      .classList.add("card");
+  cardBody  .classList.add("card-body");
+  cardTitle .classList.add("card-title");
+  cardImage .classList.add("card-img-top");
+  cardText  .classList.add("card-text");
+  cardRating.classList.add("card-rating");
+  cardPrice .classList.add("card-price");
 
-  cardLink.href = "#";
-  cardLink.appendChild(imgWrapper);
-  cardLink.appendChild(caption);
+  card.appendChild(cardImage);
+  card.appendChild(cardBody);
+  cardBody.appendChild(cardTitle);
+  cardBody.appendChild(cardText);
+  cardBody.appendChild(cardRating);
+  cardBody.appendChild(cardPrice);
 
-  imgWrapper.classList.add("imgWrapper");
-  imgWrapper.appendChild(img);
+  card.style.width = "200px"
 
-  img.src = imgLink;
-  img.alt = "#";
+  cardImage.src = imgLink;
 
-  caption.appendChild(h1);
-  caption.appendChild(author);
-  caption.appendChild(rating);
-  caption.appendChild(price);
+  cardTitle.innerText = courseName;
 
-  h1.innerText = courseName;
-
-  author.innerText = authorName;
-  author.classList.add("author");
+  cardText.innerText = authorName;
 
   const starCount = parseFloat(ratingValue);
   const s1 = document.createElement("span");
+  s1.classList.add("rating-num")
   s1.innerText = ratingValue.toPrecision(2);
-  rating.appendChild(s1);
-  rating.classList.add("rating");
+  cardRating.appendChild(s1);
 
-  for (var i = 0; i < starCount; i++) {
-    const star = document.createElement("span");
-    star.className = "material-symbols-outlined";
-    star.innerHTML = "star";
-    rating.appendChild(star);
+  for (var i = 0; i < Math.floor(starCount); i++) {
+    const star = document.createElement("img");
+    star.classList.add("star");
+    star.src= "../resources/star.png";
+    cardRating.appendChild(star);
   }
   if (starCount - i > 0) {
-    const halfStar = document.createElement("span");
-    halfStar.classList.add("material-symbols-outlined");
-    halfStar.innerHTML = "star_half";
-    rating.appendChild(halfStar);
+    const halfStar = document.createElement("img");
+    halfStar.classList.add("half-star");
+    halfStar.src= "../resources/half-star.png";
+    cardRating.appendChild(halfStar);
   }
 
-  price.innerText = "$" + priceValue;
-  price.classList.add("price");
-
+  cardPrice.innerText = "$" + priceValue;
   return card;
 }
+
+// courses navigation list
+let coursesLinks = document.querySelectorAll(".courses-list>li>a");
+coursesLinks.forEach((l) => {
+  l.addEventListener("click", function () {
+    switchCourses(this);
+  });
+});
+
+const switchCourses = (link) => {
+  document.querySelector("#active").id = "";
+  link.id = "active";
+  document.querySelector(".cards").remove();
+  getData().then((courses) => drawCourses(courses[link.dataset["type"]]));
+};
